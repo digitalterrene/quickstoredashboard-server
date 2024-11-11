@@ -7,7 +7,7 @@ const cors = require("cors");
 const corsOptions = {
   origin: [
     "https://account.quickstoredashboard.com",
-    "https://quickstoredashboard-account-server.vercel.app",
+    "https://quickstoredashboard.vercel.app",
     "http://localhost:3001",
     "http://localhost:3000",
   ],
