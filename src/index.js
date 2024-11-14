@@ -22,7 +22,7 @@ app.use(bodyParser.json({ limit: "1000mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "1000mb", extended: true }));
 
 // Database connection logic
-const uri = process.env.MONGO_URI;
+const uri = `${process.env.MONGO_URI}`;
 const client = new MongoClient(uri);
 
 async function startServer() {
@@ -31,8 +31,8 @@ async function startServer() {
     console.log("Connected to the database");
 
     // Start the server only if the database connection is successful
-    const server = app.listen(process.env.PORT, () => {
-      console.log("App is running on port", process.env.PORT || 5000);
+    const server = app.listen(`${process.env.PORT}`, () => {
+      console.log("App is running on port", `${process.env.PORT}` || 5000);
     });
 
     // Set a timeout for the server

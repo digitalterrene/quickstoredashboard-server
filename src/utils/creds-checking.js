@@ -4,12 +4,12 @@ const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
 const createToken = (_id) => {
-  return jwt.sign({ _id }, process.env.SECRET, { expiresIn: "3d" });
+  return jwt.sign({ _id }, `${process.env.SECRET}`, { expiresIn: "3d" });
 };
 
 const verifyToken = (token) => {
   try {
-    const decoded = jwt.verify(token, process.env.SECRET);
+    const decoded = jwt.verify(token, `${process.env.SECRET}`);
     //console.log("Token decoded:", decoded);
     return decoded;
   } catch (error) {
